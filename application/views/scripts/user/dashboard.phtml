@@ -1,0 +1,39 @@
+
+<br>
+<br>
+
+<?php
+// the variable/array 'user' and 'form' is generated and set in the
+// controller 'user' and action 'delete'
+//
+// all functions to the model user like 'getId()' and 'getFirstname() are
+// functions of the model 'user' in the file 'models\user.php
+?>
+<header class="gradientbg text-white">
+<div class="container text-center ">
+    
+    <a  href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">
+            <img src="/img/gbox.png" width="250" height="150"></a>
+        </a>
+    
+       <p> <h3>Welcome to Ghostbox</h3></p>
+The secure file sharing and storage solution that everyone needs.
+    
+
+
+    
+    
+    
+</div>
+</header>
+
+<div class="container">
+    <br>
+    
+    
+    
+    
+<?php echo $this->form; ?>
+   
+</div>
+</div>

@@ -1,0 +1,36 @@
+<br>
+<br>
+
+<?php
+// the variable/array 'user' and 'form' is generated and set in the
+// controller 'user' and action 'delete'
+//
+// all functions to the model user like 'getId()' and 'getFirstname() are
+// functions of the model 'user' in the file 'models\user.php
+?>
+<header class="gradientbg text-white">
+<div class="container text-center ">
+    
+    <a  href="<?php echo $this->url(array('controller' => 'user', 'action' => 'dashboard')); ?>">
+            <img src="/img/gbox.png" width="200" height="150"></a>
+        </a>
+    
+       <p> <h3>Edit your Profile here</h3></p>
+    
+    
+</div>
+
+
+
+</header>
+<div class="container">
+    <br>
+
+<?php echo $this->form; ?>
+<div>
+	<a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'dashboard')); ?>"><button type="button" class="btn btn-logreg form-control">Cancel</button></a>
+    
+    <a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'delete')); ?>"><button type="button" class="btn btn-danger form-control">Delete User Account</button></a>
+	
+</div>
+</div>

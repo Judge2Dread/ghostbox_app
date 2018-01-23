@@ -1,0 +1,49 @@
+<br /><br />
+
+<?php
+// the variable/array 'user' and 'form' is generated and set in the
+// controller 'user' and action 'delete'
+//
+// all functions to the model user like 'getId()' and 'getFirstname() are
+// functions of the model 'user' in the file 'models\user.php
+?>
+<header class="gradientbg text-white">
+<div class="container text-center ">
+    
+    <a  href="<?php echo $this->url(array('controller' => 'user', 'action' => 'dashboard')); ?>">
+            <img src="/img/gbox.png" width="250" height="150"></a>
+        </a>
+    
+       <p> <h3>Delete your Account</h3></p>
+    
+    
+</div>
+
+
+
+</header>
+<?php $user = $this->user; ?>
+
+
+<div class="container text-center">
+<div class="page-header">
+ 
+<!--    <a class="pull-right" href="<?php echo $this->url(array('controller' =>             'user', 'action' => 'delete', 'id' => $user->getId())); ?>"><button                 type="button" class="btn btn-danger">Benutzer löschen</button></a>
+-->	
+    
+    <br> <br>
+    
+    <?php echo $this->form; ?>
+    
+    	<a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'view', 'id' => $user->getId())); ?>"><button type="button" class="btn btn-default">Abbrechen</button></a>
+    
+</div>
+</div>
+<div class="alert alert-danger alert-dismissible fade in" role=alert>
+	<!--<button type=button class=close data-dismiss=alert aria-label=Close><span aria-hidden=true>&times;</span></button>-->
+	<h4><?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?></h4>
+	<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+	<p></p>
+	<a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'view', 'id' => $user->getId())); ?>"><button type="button" class="btn btn-default">Abbrechen</button></a>
+	<?php echo $this->form; ?>
+</div>

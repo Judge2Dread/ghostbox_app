@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keyword" content="">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Ghostbox</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+       
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+    <!-- Custom styles -->
+    <link href="/css/scrolling-nav.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    </head>
+    
+	 <body id="page-top">
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+       <a class="navbar-brand" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'dashboard')); ?>">
+            <img src="/img/gbox.png" width="80" height="50"></a>
+        </a>
+     
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                  <?php if(!Zend_Auth::getInstance()->hasIdentity()){?>
+                      <li class="nav-item">                        
+                          <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'create')); ?>">
+                              <button type="button" class="btn btn-default">Register</button>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'login')); ?>">
+                              <button type="button" class="btn btn-bewbs">Login</button>
+                          </a>
+                      </li>
+                  <?php } else {?>
+                  <li>
+                          <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'update')); ?>">
+                              <button type="button" class="btn btn-primary">Edit Profile Information </button>
+                          </a>
+                      </li>
+                    <li>
+                          <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'upload')); ?>">
+                              <button type="button" class="btn btn-primary">Upload</button>
+                          </a>
+                      </li>
+                 
+                      <li>
+                          <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'logout')); ?>">
+                              <button type="button" class="btn btn-danger">Logout</button>
+                          </a>
+                      </li>
+                  
+                  
+                  
+                  <li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
+					  <ul class="dropdown-menu">
+						<li class="dropdown-header">INDEX</li>
+						<li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">index</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-header">USER</li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'index')); ?>">index</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'list')); ?>">list</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'view')); ?>">view</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'create')); ?>">create</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'update')); ?>">update</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'delete')); ?>">delete</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'login')); ?>">login</a></li>
+						<li><a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'logout')); ?>">logout</a></li>
+						<li class="divider"></li>					
+						<li class="dropdown-header">ERROR</li>
+						<li><a href="<?php echo $this->url(array('controller' => 'error', 'action' => 'index')); ?>">index</a></li>
+						<li class="divider"></li>					
+						<li><a href="" onClick="location.reload();"><span class="glyphicon glyphicon-refresh"></span> Refresh</a></li>
+					  </ul>
+					</li>
+                   <?php } ?>
+              </ul>
+              
+          </div>
+    </nav>
+
+    <!-- Page Content -->
+
+        <?php echo $this->layout()->content; ?>
+
+    <!-- /.container -->
+
+    <!-- Footer -->
+    
+   <footer class="footer py-5 bg-dark fixed">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Patrick Richter</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    
+         
+         
+         
+         <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="/js/scrolling-nav.js"></script>
+	</body>
+</html>
+	

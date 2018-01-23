@@ -1,0 +1,53 @@
+<div id="view-content">
+	<p>View script for controller <b>User</b> and script/action name <b>view</b></p>
+</div>
+
+<?php
+// the variable/array 'user' is generated and set in the
+// controller 'user' and action 'view'
+//
+// all functions to the model user like 'getId()' and 'getFirstname() are
+// functions of the model 'user' in the file 'models\user.php
+?>
+
+<header class="gradientbg text-white">
+<div class="container text-center ">
+    
+    <a  href="<?php echo $this->url(array('controller' => 'user', 'action' => 'dashboard')); ?>">
+            <img src="/img/gbox.png" width="250" height="150"></a>
+        </a>
+    
+       <p> <h3>Welcome to Ghostbox</h3></p>
+The secure file sharing and storage solution that everyone needs.
+    
+
+
+    
+    
+    
+</div>
+</header>
+
+<?php $user = $this->user; ?>
+
+<div class="jumbotron">
+	<div class="media">
+	  <div class="media-left">
+		 <img src="/img/user-icon.png" alt="Generic placeholder image">
+	  </div>
+	  <div class="media-body">
+		<h1><?php echo $user->getFirstname() . ' ' . $user->getLastname(); ?></h1>
+		<h2>Benutzer ID #<?php echo $user->getId(); ?></h2>
+		<p>Informationen zum Benutzer</p>
+		<p><a href="mailto:<?php echo $user->getEmail(); ?>"><?php echo $user->getEmail(); ?></a></p>
+          <a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'update', 'id' => $user->getId())); ?>"><button type="button" class="btn btn-default">Bearbeiten</button></a>
+	<a class="pull-right" href="<?php echo $this->url(array('controller' => 'user', 'action' => 'delete', 'id' => $user->getId())); ?>"><button type="button" class="btn btn-danger">Löschen</button></a>
+	  </div>
+	</div>	
+</div>
+
+
+	
+	
+</div>
+</div>
